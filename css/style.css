@@ -1,0 +1,46 @@
+body {
+  background-color: black;
+}
+
+
+.video {
+  margin: 1em auto;
+  display: block;
+  position: relative;
+  max-width: 100%;
+}
+.video:hover + .video-control {
+  opacity: 0.8;
+}
+
+.video-control {
+  font-size: 4em;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: white;
+  text-align: center;
+}
+.video-control:hover {
+  opacity: 1;
+}
+.video-control:before, .video-control:after {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  top: 50%;
+  left: 50%;
+  margin: -0.5em 0 0 -0.5em;
+}
+.video-control:before {
+  content: '\25BA';
+}
+.video-control:after {
+  content: 'll';
+  font-weight: 700;
+}
+.video-control.paused:after {
+  opacity: 0;
+}
+.video-control.playing:before {
+  opacity: 0;
+}
